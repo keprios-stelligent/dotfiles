@@ -5,6 +5,65 @@ alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
 
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+#
+# Aliases
+#
+alias ll="ls -lh"
+alias ..="cd ../"
+alias rm="rm -f"
+alias compliance="/Users/kyle.keprios/compliance/compliance-logins.sh"
+alias todaytime="date +%H%M%S"
+alias today="date +%Y%m%d"
+alias stamp="date +%Y%m%dt%H%M"
+alias proxy="ssh -D 8888 -f -C -q -N imposter888@home"
+alias myip="curl https://ipinfo.io/ip"
+alias json="vim +star /tmp/thisisthetmpjsonfile.txt; cat /tmp/thisisthetmpjsonfile.txt | python -m json.tool; rm /tmp/thisisthetmpjsonfile.txt"
+alias python="python3"
+alias dbi="cd ~/broker/dbi-broker-deploy/"
+alias mux="tmuxinator"
+
+# Git commands
+alias gitlog="git log --graph --decorate --oneline"
+alias dot-update="cd ~/dotfiles && git fetch upstream && git rebase upstream/master && cd ~/"
+
+# Docker & Kuubernetes commands
+alias docknet="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "
+alias k="kubectl"
+
+# AWS CLI login
+alias aws-kk="~/aws/scripts/aws-mfa.sh -p kyle.keprios -a 728137704352"
+
+# Tailscale commands
+#alias tailscale="~/go/bin/tailscale"
+#alias tailscaled="~/go/bin/tailscaled"
+
+# Home machines
+#alias home="ssh imposter888@home"
+alias zero="ssh imposter888@pi-zero"
+alias pi="ssh imposter888@pi"
+alias retro="ssh imposter888@retro"
+alias amma="ssh imposter888@amma"
+alias plex="ssh -p 5453 imposter888@home"
+alias plex-tail="ssh -p 5453 imposter888@plex.tail"
+alias home="ssh -p 5453 imposter888@home"
+alias pikvm="ssh -p 7658 root@home" # Need to be on tailscale VPN
+alias pikvmtail="ssh root@tail.pikvm" # Need to be on tailscale VPN
+alias rv="ssh imposter888@rv-east"
+alias pepwave="ssh -p 5453 imposter888@pepwave"
+alias fusion="ssh -i ~/.ssh/peplink-aws.pem root@ec2-52-42-23-171.us-west-2.compute.amazonaws.com"
+alias controller0="ssh -p 25878 imposter888@home"
+alias controller1="ssh -p 25879 imposter888@home"
+alias controller2="ssh -p 25871 imposter888@home"
+alias worker0="ssh -p 25872 imposter888@home"
+alias worker1="ssh -p 25873 imposter888@home"
+alias worker2="ssh -p 25874 imposter888@home"
+
+# VIM Editor = MacVim
+alias vim="/usr/local/bin/vim"
+
 # Bundler
 alias b="bundle"
 

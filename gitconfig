@@ -3,6 +3,7 @@
   templatedir = ~/.git_template
 [push]
   default = current
+	defaul = keprios-stelligent
 [color]
   ui = auto
 [alias]
@@ -28,3 +29,6 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+[user]
+	name = keprios-stelligent
+	email = kyle.keprios@stelligent.com
