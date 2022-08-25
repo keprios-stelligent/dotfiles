@@ -62,7 +62,7 @@ alias worker1="ssh -p 25873 imposter888@home"
 alias worker2="ssh -p 25874 imposter888@home"
 
 # VIM Editor = MacVim
-alias vim="/usr/local/bin/vim"
+#alias vim="/usr/local/bin/vim"
 
 # Bundler
 alias b="bundle"

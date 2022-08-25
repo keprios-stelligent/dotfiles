@@ -1,4 +1,13 @@
 # load custom executable functions
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+
 for function in ~/.zsh/functions/*; do
   source $function
 done
@@ -41,3 +50,6 @@ _load_settings "$HOME/.zsh/configs"
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
