@@ -8,6 +8,8 @@ bindkey "^F" vi-cmd-mode
 # handy keybindings
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
+bindkey "^[f" forward-word
+bindkey "^[b" backward-word
 bindkey "^K" kill-line
 bindkey "^R" history-incremental-search-backward
 bindkey "^P" history-search-backward
