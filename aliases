@@ -1,5 +1,4 @@
 # Unix
-alias ll="ls -al"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
@@ -14,6 +13,7 @@ alias v="$VISUAL"
 alias ll="ls -lh"
 alias ..="cd ../"
 alias rm="rm -f"
+alias sshadd="eval \"$(ssh-agent -s)\" && ssh-add ~/.ssh/3m-dev"
 alias compliance="/Users/kyle.keprios/compliance/compliance-logins.sh"
 alias todaytime="date +%H%M%S"
 alias today="date +%Y%m%d"
