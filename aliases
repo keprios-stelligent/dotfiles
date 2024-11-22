@@ -4,8 +4,50 @@ alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
 
+# Plex Machine Aliases
+alias dapp="cd /media/library/docker-apps/"
+alias dstat="docker stats"
+alias dpa="docker ps -a"
+alias dfh="df -BG | egrep -v 'udev|tmpfs|loop'"
+alias media="cd /media/library"
+
+# Cloudflare API token test
+alias token-test='curl -X GET "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+     -H "Authorization: Bearer OyK5JGM7w2_1qk6QQD-VL9-7rGihXa0KmFKvDXUv" \
+     -H "Content-Type:application/json"'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+alias sshadd-dev="eval \"$(ssh-agent -s)\" && ssh-add ~/.ssh/3m-key"
+alias sshadd-per="eval \"$(ssh-agent -s)\" && ssh-add ~/.ssh/personal-rsa"
+alias bespin="cd ~/bespin/"
+alias hpcc="cd ~/hpcc/"
+
+#alias sshadd-ecne-identity="ssh-add ~/.ssh/keprios-tech-ecnemed"
+
+# Packer convert
+alias pack-con="packer hcl2_upgrade"
+
+export wmi=$(whoami)
+if [[ $wmi == "adj3tzz" ]]; then
+  alias pip3="pip3 --trusted-host pypi.org --trusted-host files.pythonhosted.org"
+
+  alias awdv="aws --profile hpcc-dev" # Dev account for aws 3M SSO
+  alias awpr="aws --profile hpcc-prod" # Prod account for aws 3M SSO
+  alias aws-sso-dev="aws --profile hpcc-dev sso login" # SSO for 3M Dev
+	alias aws-sso="aws --profile hpcc-prod sso login" # SSO for 3M - <below>
+    # Link: https://d-9067738b39.awsapps.com/start#
+    # Region: us-east-1
+fi
+
+# Set AWS aliases for EcneMed on Amma
+#if [[ $wmi == "imposter888" && $(hostname) == "ermac" ]]; then
+#  alias awe="aws --profile ecnemed"
+#  alias awe-sso="aws --profile ecnemed sso login"
+#  alias indexer="ssh kyle.keprios@10.0.1.177"
+#  alias ecne-vpn="ssh -p 3263 kyle.keprios@44.210.203.238"
+#fi
 
 #
 # Aliases
@@ -13,7 +55,7 @@ alias v="$VISUAL"
 alias ll="ls -lh"
 alias ..="cd ../"
 alias rm="rm -f"
-alias sshadd="eval \"$(ssh-agent -s)\" && ssh-add ~/.ssh/3m-dev"
+alias sshadd="eval \"$(ssh-agent -s)\" && ssh-add ~/.ssh/id_rsa"
 alias compliance="/Users/kyle.keprios/compliance/compliance-logins.sh"
 alias todaytime="date +%H%M%S"
 alias today="date +%Y%m%d"
@@ -26,11 +68,19 @@ alias dbi="cd ~/broker/dbi-broker-deploy/"
 alias mux="tmuxinator"
 
 # Git commands
+
+function gsp() {
+	git stage . && git commit -m "$1" && git push
+}
+
 alias gitlog="git log --graph --decorate --oneline"
 alias dot-update="cd ~/dotfiles && git fetch upstream && git rebase upstream/master && cd ~/"
+alias gcom="git stage . && git commit -m "
 
 # Docker & Kuubernetes commands
 alias docknet="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "
+alias dpa="docker ps -a"
+alias dstat="docker stats -a"
 alias k="kubectl"
 
 # AWS CLI login
@@ -39,6 +89,38 @@ alias aws-kk="~/aws/scripts/aws-mfa.sh -p kyle.keprios -a 728137704352"
 # Tailscale commands
 #alias tailscale="~/go/bin/tailscale"
 #alias tailscaled="~/go/bin/tailscaled"
+
+# 3M Machines
+# Prod
+alias hpcc-prod-salt="ssh adj3tzzad@hpcc-cfg-pr.hpcc.mmm.com"
+alias hpcc-prod-control="ssh adj3tzzad@hpcc-ctl0-pr.hpcc.mmm.com"
+alias hpcc-prod-control1="ssh adj3tzzad@hpcc-ctl1-pr.hpcc.mmm.com"
+alias hpcc-prod-dcv="ssh adj3tzzad@hpcc-dcv001-pr.hpcc.mmm.com"
+alias hpcc-prod-ded="ssh adj3tzzad@hpcc-ded001-pr.hpcc.mmm.com"
+alias hpcc-prod-dx1="ssh adj3tzzad@hpcc-dx01-pr.hpcc.mmm.com"
+alias hpcc-prod-dx2="ssh adj3tzzad@hpcc-dx02-pr.hpcc.mmm.com"
+alias hpcc-prod-dx3="ssh adj3tzzad@hpcc-dx03-pr.hpcc.mmm.com"
+alias hpcc-prod-dx4="ssh adj3tzzad@hpcc-dx04-pr.hpcc.mmm.com"
+alias hpcc-prod-ef="ssh adj3tzzad@hpcc-ef0-pr.hpcc.mmm.com"
+alias hpcc-prod-pbs="ssh adj3tzzad@hpcc-pbs0-pr.hpcc.mmm.com"
+alias hpcc-prod-login="ssh adj3tzzad@hpcc-sfe00-pr.hpcc.mmm.com"
+alias hpcc-prod-smb="ssh adj3tzzad@hpcc-smb0-pr.hpcc.mmm.com"
+alias hpcc-prod-svc="ssh adj3tzzad@hpcc-svc00-pr.hpcc.mmm.com"
+# Dev
+#alias hpcc-dev-navops="ssh adj3tzzad@hpcc-navops-dev"
+alias hpcc-dev-compute="ssh adj3tzzad@10.116.198.194"
+alias hpcc-dev-navops="ssh adj3tzzad@10.116.198.253"
+alias hpcc-dev-salt="ssh adj3tzzad@hpcc-cfg-dev"
+alias hpcc-dev-control="ssh adj3tzzad@hpcc-ctl0-dev"
+alias hpcc-dev-control1="ssh adj3tzzad@hpcc-ctl1-dev"
+alias hpcc-dev-dcv="ssh adj3tzzad@hpcc-dcv001-dev"
+alias hpcc-dev-ded="ssh adj3tzzad@hpcc-ded001-dev"
+alias hpcc-dev-dx1="ssh adj3tzzad@hpcc-dx01-dev"
+alias hpcc-dev-dx2="ssh adj3tzzad@hpcc-dx02-dev"
+alias hpcc-dev-ef="ssh adj3tzzad@hpcc-ef0-dev"
+alias hpcc-dev-pbs="ssh adj3tzzad@hpcc-pbs0-dev"
+alias hpcc-dev-login="ssh adj3tzzad@hpcc-sfe00-dev"
+alias hpcc-dev-smb="ssh adj3tzzad@hpcc-smb0-dev"
 
 # Home machines
 #alias home="ssh imposter888@home"
@@ -54,12 +136,12 @@ alias pikvmtail="ssh root@tail.pikvm" # Need to be on tailscale VPN
 alias rv="ssh imposter888@rv-east"
 alias pepwave="ssh -p 5453 imposter888@pepwave"
 alias fusion="ssh -i ~/.ssh/peplink-aws.pem root@ec2-52-42-23-171.us-west-2.compute.amazonaws.com"
-alias controller0="ssh -p 25878 imposter888@home"
-alias controller1="ssh -p 25879 imposter888@home"
-alias controller2="ssh -p 25871 imposter888@home"
-alias worker0="ssh -p 25872 imposter888@home"
-alias worker1="ssh -p 25873 imposter888@home"
-alias worker2="ssh -p 25874 imposter888@home"
+alias controller0="ssh -p 25820 imposter888@home" # Translation (CLUC0 - CLUsterController0)
+alias controller1="ssh -p 25821 imposter888@home" # Translation (CLUC1 - CLUsterController1)
+alias worker0="ssh -p 25890 imposter888@home" # Translation (CLUW0 - CLUsterWorker0)
+alias worker1="ssh -p 25891 imposter888@home" # Translation (CLUW1 - CLUsterWorker1)
+alias worker2="ssh -p 25892 imposter888@home" # Translation (CLUW2 - CLUsterWorker2)
+alias worker3="ssh -p 25893 imposter888@home" # Translation (CLUW3 - CLUsterWorker3)
 
 # VIM Editor = MacVim
 #alias vim="/usr/local/bin/vim"

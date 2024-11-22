@@ -1,0 +1,34 @@
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+
+# Home machines
+#10.0.0.24	    retro
+#10.0.0.15      pi
+3.83.48.142     webserver
+100.70.123.116  tail.veta tail.home tail.plex
+100.64.64.18    tail.pikvm
+10.0.0.100      plex veta aj
+10.0.0.50       pikvm
+10.0.0.1        pepwave
+10.0.0.22       amma
+10.0.0.90       pi-zero
+76.113.224.111  home
+
+# K3S Cluster
+10.0.0.201  controller-0  # Port 25878 (Clust)
+10.0.0.202  controller-1  # Port 25879
+10.0.0.211  worker-0      # Port 25871
+11.0.0.212  worker-1      # Port 25872
+12.0.0.213  worker-2      # Port 25873
+13.0.0.214  worker-3      # Port 25874
+
+# Added by Docker Desktop
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
