@@ -68,11 +68,6 @@ alias dbi="cd ~/broker/dbi-broker-deploy/"
 alias mux="tmuxinator"
 
 # Git commands
-
-function gsp() {
-	git stage . && git commit -m "$1" && git push
-}
-
 alias gitlog="git log --graph --decorate --oneline"
 alias dot-update="cd ~/dotfiles && git fetch upstream && git rebase upstream/master && cd ~/"
 alias gcom="git stage . && git commit -m "
@@ -108,7 +103,8 @@ alias hpcc-prod-smb="ssh adj3tzzad@hpcc-smb0-pr.hpcc.mmm.com"
 alias hpcc-prod-svc="ssh adj3tzzad@hpcc-svc00-pr.hpcc.mmm.com"
 # Dev
 #alias hpcc-dev-navops="ssh adj3tzzad@hpcc-navops-dev"
-alias hpcc-dev-compute="ssh adj3tzzad@10.116.198.194"
+#alias hpcc-dev-compute="ssh adj3tzzad@10.116.198.194"
+alias hpcc-dev-compute="ssh adj3tzzad@10.116.198.180"
 alias hpcc-dev-navops="ssh adj3tzzad@10.116.198.253"
 alias hpcc-dev-salt="ssh adj3tzzad@hpcc-cfg-dev"
 alias hpcc-dev-control="ssh adj3tzzad@hpcc-ctl0-dev"
