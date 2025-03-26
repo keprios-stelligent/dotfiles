@@ -126,6 +126,7 @@ alias retro="ssh imposter888@retro"
 alias amma="ssh -p 5453 imposter888@amma"
 alias plex="ssh -p 5453 imposter888@home"
 alias plex-tail="ssh -p 5453 imposter888@plex.tail"
+alias willy="ssh -p 5453 imposter888@willy"
 alias home="ssh -p 5453 imposter888@plex"
 alias pikvm="ssh -p 7658 root@home" # Need to be on tailscale VPN
 alias pikvmtail="ssh root@tail.pikvm" # Need to be on tailscale VPN
@@ -138,6 +139,9 @@ alias worker0="ssh -p 25890 imposter888@home" # Translation (CLUW0 - CLUsterWork
 alias worker1="ssh -p 25891 imposter888@home" # Translation (CLUW1 - CLUsterWorker1)
 alias worker2="ssh -p 25892 imposter888@home" # Translation (CLUW2 - CLUsterWorker2)
 alias worker3="ssh -p 25893 imposter888@home" # Translation (CLUW3 - CLUsterWorker3)
+
+# Misc Commands
+alias weather="curl v2d.wttr.in/Burnsville"
 
 # VIM Editor = MacVim
 #alias vim="/usr/local/bin/vim"

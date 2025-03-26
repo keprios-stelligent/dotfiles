@@ -1,7 +1,8 @@
 # load custom executable functions
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git ssh-agent)
+
+source /usr/local/Cellar/zsh-syntax-highlighting/0.8.0/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
 
@@ -21,6 +22,7 @@ autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
 
+plugins=(git ssh-agent zsh-syntax-highlighting)
 
 # extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
 # these are loaded first, second, and third, respectively.
@@ -150,3 +152,4 @@ case $HOSTNAME in
     export DRONE_SERVER=https://drone.3m-cloud.com && \
     export DRONE_TOKEN=rJcsHKEOZIxT86A1v0IcItxKKdnjWNha;;
 esac
+
