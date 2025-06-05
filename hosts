@@ -19,7 +19,8 @@
 10.0.0.22       amma
 10.0.0.90       pi-zero
 10.0.0.250	pepper
-76.113.224.111  home
+24.245.6.78	home
+#76.113.224.111  home
 
 # K3S Cluster
 10.0.0.201  controller-0  # Port 25878 (Clust)
